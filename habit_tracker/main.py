@@ -28,13 +28,11 @@ completed_tasks = 0
 
 # returning a new view of the dictionary(status)
 for n, question in status.items():
-    if question == True:
+    if question:
         print(f"Done: {n}")
         completed_tasks = completed_tasks + 1
-    elif question == False:
-        print(f"Not: {n}")
     else:
-        print("Input does not make sense")
+        print(f"Not: {n}")
     
 print(f"\nYou have completed {completed_tasks} out of {no_habits} tasks today. Good Job")
 
