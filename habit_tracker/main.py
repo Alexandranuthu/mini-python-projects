@@ -20,4 +20,19 @@ for n in habits:
     # for each habit store whether it has been done or not
     status[n] = question == 'y'
 
+# initialise the amount of tasks done
+completed_tasks = 0
+
+# returning a new view of the dictionary(status)
+for n, question in status.items():
+    if question == True:
+        print(f"Done: {n}")
+        completed_tasks = completed_tasks + 1
+    elif question == False:
+        print(f"Not: {n}")
+    else:
+        print("Input does not make sense")
+    
+print(f"You have completed {completed_tasks} out of {no_habits} today. Good Job")
+
 
