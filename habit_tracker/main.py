@@ -6,5 +6,6 @@ no_habits = int(input("How many habits do you want to enter today? "))
 # using range
 for h in range(no_habits):
     # after entering habit, allow user to add another one
-    user_habit = input(f"Enter habit {h + 1}")
+    user_habit = input(f"Enter habit: {h + 1}")
     habits.append(user_habit)
+
