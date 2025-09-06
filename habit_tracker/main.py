@@ -1,24 +1,27 @@
+print("---------- Wassup. Get in a habit of tracking your habits ----------")
 habits = []
 
-no_habits = int(input("How many habits do you want to enter today? "))
+no_habits = int(input("What do you wanna do today? "))
 
 # for loop to take each input one by one and append to the list 
 # using range
 for h in range(no_habits):
     # after entering habit, allow user to add another one
-    user_habit = input(f"Enter habit: {h + 1}")
+    user_habit = input(f"Put them in {h + 1}: ").strip().capitalize()
     habits.append(user_habit)
 
 # ask user if they've done it
-print("What habits have you done today?")
+print("So, how many have you done today?")
 
 # using a dictionary to store key value pairs i.e habit : done or not
 status = {}
 
 for n in habits:
-    question = input(f"Have you done {n}? (Y/N) ").lower()
+    question = input(f"Have you done '{n}' (Y/N) ? ").lower()
     # for each habit store whether it has been done or not
     status[n] = question == 'y'
+
+print('\n---------- Summary ----------')
 
 # initialise the amount of tasks done
 completed_tasks = 0
@@ -33,6 +36,6 @@ for n, question in status.items():
     else:
         print("Input does not make sense")
     
-print(f"You have completed {completed_tasks} out of {no_habits} today. Good Job")
+print(f"\nYou have completed {completed_tasks} out of {no_habits} tasks today. Good Job")
 
 
