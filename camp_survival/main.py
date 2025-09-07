@@ -27,5 +27,18 @@ def gatherfood():
     print(f"The {no_survivors} survivors brought back {food_found} food.\nYou now have {camp['food']}")
     print(f"You are also left with {camp['health']} ")
 
+def rest():
+    print("You have decided to rest.")
+    camp['health'] += 5
+    print(f"Camp's health is now at {camp['health']}")
+
+def feedsurvivors():
+    print("You need to feed the people.")
+    if camp['food'] >= camp['survivors']:
+        divide_food = camp['food'] - camp['survivors']
+        camp['food'] = divide_food
+    print(f"{camp['food']}")
+feedsurvivors()
+
 
 
