@@ -33,12 +33,19 @@ def rest():
     print(f"Camp's health is now at {camp['health']}")
 
 def feedsurvivors():
-    print("You need to feed the people.")
+    print(f"You need to feed the people.You have {camp['food']} in store")
     if camp['food'] >= camp['survivors']:
         divide_food = camp['food'] - camp['survivors']
         camp['food'] = divide_food
-    print(f"{camp['food']}")
-feedsurvivors()
+        camp['health'] += 15
+        print(f"Camp has eaten. Health has been added: {camp['health']}.")
+    else:
+        camp['health'] -= 15
+        print(f"You cannot feed others and leave others. For that, Camp's health has dropped to {camp['health']}")
+    
+
+    
+
 
 
 
