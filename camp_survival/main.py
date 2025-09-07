@@ -21,6 +21,11 @@ def gatherfood():
     # randomly choosing the number of food brought back
     food_found = random.choice(range(0,15))
     camp['food'] = camp['food'] + food_found
-    
+    # each time they gather food they lose health
+    camp['health'] -= 10
+
     print(f"The {no_survivors} survivors brought back {food_found} food.\nYou now have {camp['food']}")
+    print(f"You are also left with {camp['health']} ")
+
+
 
